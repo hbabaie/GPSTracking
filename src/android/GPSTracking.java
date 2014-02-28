@@ -95,7 +95,7 @@ public class GPSTracking extends CordovaPlugin {
 			HttpGet httpget = new HttpGet(URL);
             ResponseHandler<String> responseHandler = new BasicResponseHandler();
             SetServerString = Client.execute(httpget, responseHandler);
-        	content.setText(SetServerString);
+        	//content.setText(SetServerString);
 		}
 		catch(Exception ex)
 		{
