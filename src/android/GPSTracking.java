@@ -7,8 +7,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 
 import org.apache.http.client;
-import org.apache.http.client.methods;
-import org.apache.http.impl.client;
+//import org.apache.http.client.methods;
+//import org.apache.http.impl.client;
 
 import android.location.Location;
 import android.location.LocationListener;
