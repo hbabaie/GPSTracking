@@ -76,8 +76,8 @@ public class GPSTracking extends CordovaPlugin {
 		}
 	}
 	
-//	public void SendDataToServer(Location location)
-//	{
+	public void SendDataToServer()//Location location)
+	{
 //		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
 //				"PersonnelId=" + PersonnelId +
 //				"&Latitude=" + location.getLatitude() +
@@ -85,18 +85,18 @@ public class GPSTracking extends CordovaPlugin {
 //				"&LocationProvider=" + location.getProvider() +
 //				"&Accuracy=" + (location.hasAccuracy() ? location.getAccuracy() : Float.MAX_VALUE) +
 //				"&Time=" + location.getTime();
-//		try
-//		{
+		try
+		{
 //			String SetServerString = "";
 //			HttpGet httpget = new HttpGet(URL);
 //            ResponseHandler<String> responseHandler = new BasicResponseHandler();
 //            SetServerString = Client.execute(httpget, responseHandler);
 //        	//content.setText(SetServerString);
-//		}
-//		catch(Exception ex)
-//		{
-//			//content.setText("Fail!");
-//		}
-//	}
+		}
+		catch(Exception ex)
+		{
+			//content.setText("Fail!");
+		}
+	}
 }
 
