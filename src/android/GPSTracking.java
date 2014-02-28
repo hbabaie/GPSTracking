@@ -15,31 +15,31 @@ import android.content.Intent;
 
 public class GPSTracking extends CordovaPlugin {
 	public static final String ACTION_START_LISTENING = "StartListening";
-//	LocationManager lm;
-//	boolean gps_enabled=false;
-//    boolean network_enabled=false;
-//    String RemoteServerAddress;
-//	String PersonnelId;
-//	int Interval;
-//	Criteria criteria;
-//	LocationListener listener;
+	LocationManager lm;
+	boolean gps_enabled=false;
+    boolean network_enabled=false;
+    String RemoteServerAddress;
+	String PersonnelId;
+	int Interval;
+	Criteria criteria;
+	LocationListener listener;
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
 		try {
 			if (ACTION_START_LISTENING.equals(action)) { 
-//				JSONObject arg_object = args.getJSONObject(0);
-//				RemoteServerAddress = arg_object.getLong("RemoteServer");
-//				PersonnelId = arg_object.getLong("PersonnelId");
-//				Interval = Integer.parseInt(arg_object.getLong("Interval"));
-//				criteria = new Criteria();
-//				criteria.setAccuracy(Criteria.ACCURACY_FINE);
-//				criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
-//				criteria.setCostAllowed(true);
-//				criteria.setAltitudeRequired(false);
-//				criteria.setBearingRequired(false);
-//				criteria.setSpeedRequired(false);
-//				
+				JSONObject arg_object = args.getJSONObject(0);
+				RemoteServerAddress = arg_object.getLong("RemoteServer");
+				PersonnelId = arg_object.getLong("PersonnelId");
+				Interval = Integer.parseInt(arg_object.getLong("Interval"));
+				criteria = new Criteria();
+				criteria.setAccuracy(Criteria.ACCURACY_FINE);
+				criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
+				criteria.setCostAllowed(true);
+				criteria.setAltitudeRequired(false);
+				criteria.setBearingRequired(false);
+				criteria.setSpeedRequired(false);
+				
 //				listener = new LocationListener() {
 //			        public void onLocationChanged(Location location) {
 //		        		//SendDataToServer(location);
