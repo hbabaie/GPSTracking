@@ -30,8 +30,8 @@ public class GPSTracking extends CordovaPlugin {
 			if (ACTION_START_LISTENING.equals(action)) { 
 				JSONObject arg_object = args.getJSONObject(0);
 				RemoteServerAddress = arg_object.getString("RemoteServer");
-				PersonnelId = arg_object.getString("PersonnelId");
-				Interval = Integer.parseInt(arg_object.getInt("Interval"));
+				//PersonnelId = arg_object.getString("PersonnelId");
+				//Interval = arg_object.getInt("Interval");
 //				criteria = new Criteria();
 //				criteria.setAccuracy(Criteria.ACCURACY_FINE);
 //				criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
