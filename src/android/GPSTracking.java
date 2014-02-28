@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import org.apache.http.client;
+//import org.apache.http.client;
 //import org.apache.http.client.methods;
 //import org.apache.http.impl.client;
 
