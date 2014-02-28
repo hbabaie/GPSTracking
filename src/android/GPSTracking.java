@@ -10,9 +10,7 @@ import org.apache.http.client.*;
 import org.apache.http.client.methods.*;
 import org.apache.http.impl.client.*;
 
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
+import android.location.*;
 import android.app.Activity;
 import android.content.Intent;
 
@@ -21,11 +19,11 @@ public class GPSTracking extends CordovaPlugin {
 	String RemoteServerAddress;
 	String PersonnelId;
 	int Interval;
-	//LocationManager lm;
+	LocationManager lm;
 	boolean gps_enabled=false;
     boolean network_enabled=false;
-    //Criteria criteria;
-	//LocationListener listener;
+    Criteria criteria;
+	LocationListener listener;
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -35,13 +33,13 @@ public class GPSTracking extends CordovaPlugin {
 				RemoteServerAddress = arg_object.getString("RemoteServer");
 				PersonnelId = arg_object.getString("PersonnelId");
 				Interval = arg_object.getInt("Interval");
-//				criteria = new Criteria();
-//				criteria.setAccuracy(Criteria.ACCURACY_FINE);
-//				criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
-//				criteria.setCostAllowed(true);
-//				criteria.setAltitudeRequired(false);
-//				criteria.setBearingRequired(false);
-//				criteria.setSpeedRequired(false);
+				criteria = new Criteria();
+				criteria.setAccuracy(Criteria.ACCURACY_FINE);
+				criteria.setPowerRequirement(Criteria.POWER_MEDIUM);
+				criteria.setCostAllowed(true);
+				criteria.setAltitudeRequired(false);
+				criteria.setBearingRequired(false);
+				criteria.setSpeedRequired(false);
 				
 //				listener = new LocationListener() {
 //			        public void onLocationChanged(Location location) {
@@ -95,7 +93,7 @@ public class GPSTracking extends CordovaPlugin {
 			HttpGet httpget = new HttpGet(URL);
 			ResponseHandler<String> responseHandler = new BasicResponseHandler();
 			SetServerString = Client.execute(httpget, responseHandler);
-        	//content.setText(SetServerString);
+			//content.setText(SetServerString);
 		}
 		catch(Exception ex)
 		{
