@@ -2,17 +2,15 @@ package com.pakhshyaran.kara.plugins;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-import org.json.JSONObject;
-import org.json.JSONArray;
-import org.json.JSONException;
+import org.json.*;
 
 import org.apache.http.client.*;
 import org.apache.http.client.methods.*;
 import org.apache.http.impl.client.*;
 
 import android.location.*;
-import android.app.Activity;
-import android.content.Intent;
+import android.app.*;
+import android.content.*;
 
 public class GPSTracking extends CordovaPlugin {
 	public static final String ACTION_START_LISTENING = "StartListening";
