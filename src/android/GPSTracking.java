@@ -49,7 +49,7 @@ public class GPSTracking extends CordovaPlugin {
 			        public void onStatusChanged(String provider, int status, Bundle extras) {}
 			    };
 				
-				lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+				lm = (LocationManager) (TelephonyManager)this.cordova.getActivity().getSystemService(Context.LOCATION_SERVICE);
 				try{gps_enabled=lm.isProviderEnabled(LocationManager.GPS_PROVIDER);}catch(Exception ex){}
 		        try{network_enabled=lm.isProviderEnabled(LocationManager.NETWORK_PROVIDER);}catch(Exception ex){}
 		        if(!gps_enabled && !network_enabled)
