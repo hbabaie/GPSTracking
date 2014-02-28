@@ -78,13 +78,13 @@ public class GPSTracking extends CordovaPlugin {
 	
 	public void SendDataToServer(Location location)
 	{
-//		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
-//				"PersonnelId=" + PersonnelId +
-//				"&Latitude=" + location.getLatitude() +
-//				"&Longitude=" + location.getLongitude() +
-//				"&LocationProvider=" + location.getProvider() +
-//				"&Accuracy=" + (location.hasAccuracy() ? location.getAccuracy() : Float.MAX_VALUE) +
-//				"&Time=" + location.getTime();
+		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
+				"PersonnelId=" + PersonnelId +
+				"&Latitude=" + location.getLatitude() +
+				"&Longitude=" + location.getLongitude() +
+				"&LocationProvider=" + location.getProvider() +
+				"&Accuracy=" + (location.hasAccuracy() ? location.getAccuracy() : Float.MAX_VALUE) +
+				"&Time=" + location.getTime();
 		try
 		{
 //			String SetServerString = "";
