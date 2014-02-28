@@ -76,7 +76,7 @@ public class GPSTracking extends CordovaPlugin {
 		}
 	}
 	
-	public void SendDataToServer()//Location location)
+	public void SendDataToServer(Location location)
 	{
 //		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
 //				"PersonnelId=" + PersonnelId +
