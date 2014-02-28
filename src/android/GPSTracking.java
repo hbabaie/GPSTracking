@@ -6,7 +6,10 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-//import sun.net.www.http.HttpClient;
+import org.apache.http.client;
+import org.apache.http.client.methods;
+import org.apache.http.impl.client;
+
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -87,11 +90,12 @@ public class GPSTracking extends CordovaPlugin {
 				"&Time=" + location.getTime();
 		try
 		{
-//			String SetServerString = "";
-//			HttpGet httpget = new HttpGet(URL);
-//            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-//            SetServerString = Client.execute(httpget, responseHandler);
-//        	//content.setText(SetServerString);
+			HttpClient Client = new DefaultHttpClient();
+			String SetServerString = "";
+			HttpGet httpget = new HttpGet(URL);
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            SetServerString = Client.execute(httpget, responseHandler);
+        	//content.setText(SetServerString);
 		}
 		catch(Exception ex)
 		{
