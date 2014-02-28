@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-           id="com.pakhshyaran.kara"
+           id="com.pakhshyaran.kara.plugins"
       version="0.1.0">
-  <name>Calendar</name>
-  <description>Sample PhoneGap Calendar Plugin</description>
+  <name>GPSTracking</name>
+  <description>Sends GPS location of the device to a remote server intervally.</description>
   <license>MIT</license>
-  <keywords>phonegap,calendar</keywords>
+  <keywords>phonegap,GPS,Tracking</keywords>
 
 
   <js-module src="www/GPSTracking.js" name="GPSTracking">
@@ -17,10 +17,10 @@
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
       <feature name="Calendar">
-        <param name="android-package" value="com.pakhshyaran.kara.GPSTracking"/>
+        <param name="android-package" value="com.pakhshyaran.kara.plugins.GPSTracking"/>
       </feature>
     </config-file>
 
-    <source-file src="src/android/GPSTracking.java" target-dir="src/com/pakhshyaran/kara" />
+    <source-file src="src/android/GPSTracking.java" target-dir="src/com/pakhshyaran/kara/plugins" />
   </platform>
 </plugin>

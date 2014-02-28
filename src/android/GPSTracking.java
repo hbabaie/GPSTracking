@@ -1,10 +1,12 @@
-package com.pakhshyaran.kara;
+package com.pakhshyaran.kara.plugins;
  
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
+
+import sun.net.www.http.HttpClient;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -76,7 +78,25 @@ public class GPSTracking extends CordovaPlugin {
 	
 	public SendDataToServer(Location location)
 	{
-		//TODO
+		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
+				"PersonnelId=" + PersonnelId +
+				"&Latitude=" + location.getLatitude() +
+				"&Longitude=" + location.getLongitude() +
+				"&LocationProvider=" + location.getProvider() +
+				"&Accuracy=" + (location.hasAccuracy() ? location.getAccuracy() : Float.MAX_VALUE) +
+				"&Time=" + location.getTime();
+		try
+		{
+			String SetServerString = "";
+			HttpGet httpget = new HttpGet(URL);
+            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+            SetServerString = Client.execute(httpget, responseHandler);
+        	//content.setText(SetServerString);
+		}
+		catch(Exception ex)
+		{
+			//content.setText("Fail!");
+		}
 	}
 }
 
