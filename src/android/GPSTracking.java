@@ -39,14 +39,14 @@ public class GPSTracking extends CordovaPlugin {
 				criteria.setBearingRequired(false);
 				criteria.setSpeedRequired(false);
 				
-				listener = new LocationListener() {
-			        public void onLocationChanged(Location location) {
-		        		//SendDataToServer(location);
-			        }
-			        public void onProviderDisabled(String provider) {}
-			        public void onProviderEnabled(String provider) {}
-			        public void onStatusChanged(String provider, int status, Bundle extras) {}
-			    };
+//				listener = new LocationListener() {
+//			        public void onLocationChanged(Location location) {
+//		        		//SendDataToServer(location);
+//			        }
+//			        public void onProviderDisabled(String provider) {}
+//			        public void onProviderEnabled(String provider) {}
+//			        public void onStatusChanged(String provider, int status, Bundle extras) {}
+//			    };
 				
 //				lm = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 //				try{gps_enabled=lm.isProviderEnabled(LocationManager.GPS_PROVIDER);}catch(Exception ex){}
