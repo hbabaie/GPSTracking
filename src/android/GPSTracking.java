@@ -78,25 +78,25 @@ public class GPSTracking extends CordovaPlugin {
 	
 	public SendDataToServer(Location location)
 	{
-		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
-				"PersonnelId=" + PersonnelId +
-				"&Latitude=" + location.getLatitude() +
-				"&Longitude=" + location.getLongitude() +
-				"&LocationProvider=" + location.getProvider() +
-				"&Accuracy=" + (location.hasAccuracy() ? location.getAccuracy() : Float.MAX_VALUE) +
-				"&Time=" + location.getTime();
-		try
-		{
-			String SetServerString = "";
-			HttpGet httpget = new HttpGet(URL);
-            ResponseHandler<String> responseHandler = new BasicResponseHandler();
-            SetServerString = Client.execute(httpget, responseHandler);
-        	//content.setText(SetServerString);
-		}
-		catch(Exception ex)
-		{
-			//content.setText("Fail!");
-		}
+//		String URL = "http://" + RemoteServerAddress + "//OuterInterface/Mobile/SetGPSTrackingRecord?" +
+//				"PersonnelId=" + PersonnelId +
+//				"&Latitude=" + location.getLatitude() +
+//				"&Longitude=" + location.getLongitude() +
+//				"&LocationProvider=" + location.getProvider() +
+//				"&Accuracy=" + (location.hasAccuracy() ? location.getAccuracy() : Float.MAX_VALUE) +
+//				"&Time=" + location.getTime();
+//		try
+//		{
+//			String SetServerString = "";
+//			HttpGet httpget = new HttpGet(URL);
+//            ResponseHandler<String> responseHandler = new BasicResponseHandler();
+//            SetServerString = Client.execute(httpget, responseHandler);
+//        	//content.setText(SetServerString);
+//		}
+//		catch(Exception ex)
+//		{
+//			//content.setText("Fail!");
+//		}
 	}
 }
 
