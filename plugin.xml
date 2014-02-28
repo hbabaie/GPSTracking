@@ -21,6 +21,6 @@
       </feature>
     </config-file>
 
-    <source-file src="src/android/GPSTracking.java" target-dir="src/ccom/pakhshyaran/kara" />
+    <source-file src="src/android/GPSTracking.java" target-dir="src/com/pakhshyaran/kara" />
   </platform>
 </plugin>
