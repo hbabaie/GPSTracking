@@ -6,7 +6,7 @@ import org.json.JSONObject;
 import org.json.JSONArray;
 import org.json.JSONException;
 
-import sun.net.www.http.HttpClient;
+//import sun.net.www.http.HttpClient;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
@@ -15,14 +15,14 @@ import android.content.Intent;
 
 public class GPSTracking extends CordovaPlugin {
 	public static final String ACTION_START_LISTENING = "StartListening";
-	LocationManager lm;
-	boolean gps_enabled=false;
-    boolean network_enabled=false;
-    String RemoteServerAddress;
-	String PersonnelId;
-	int Interval;
-	Criteria criteria;
-	LocationListener listener;
+//	LocationManager lm;
+//	boolean gps_enabled=false;
+//    boolean network_enabled=false;
+//    String RemoteServerAddress;
+//	String PersonnelId;
+//	int Interval;
+//	Criteria criteria;
+//	LocationListener listener;
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
