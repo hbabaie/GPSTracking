@@ -18,11 +18,11 @@ public class GPSTracking extends CordovaPlugin {
 	String RemoteServerAddress;
 	String PersonnelId;
 	int Interval;
-	LocationManager lm;
+	//LocationManager lm;
 	boolean gps_enabled=false;
     boolean network_enabled=false;
-    Criteria criteria;
-	LocationListener listener;
+    //Criteria criteria;
+	//LocationListener listener;
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
