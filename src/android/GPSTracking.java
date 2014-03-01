@@ -67,8 +67,8 @@ public class GPSTracking extends CordovaPlugin {
 		        if(!gps_enabled && !network_enabled)
 		        	callbackContext.error("There's no active location provider on your device.");
 		        
-//		        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, Interval, 0, GPSListener);
-//		        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, Interval, 0, NetworkListener);
+		        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, Interval, 0, GPSListener);
+		        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, Interval, 0, NetworkListener);
 //		        
 //				this.cordova.getThreadPool().execute(new Runnable() {
 //				    public void run() {
