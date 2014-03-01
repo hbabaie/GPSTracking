@@ -22,7 +22,8 @@ public class GPSTracking extends CordovaPlugin {
 	boolean gps_enabled=false;
     boolean network_enabled=false;
     Criteria criteria;
-	LocationListener listener;
+	LocationListener GPSListener;
+	LocationListener NetworkListener;
 	
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -40,7 +41,16 @@ public class GPSTracking extends CordovaPlugin {
 				criteria.setBearingRequired(false);
 				criteria.setSpeedRequired(false);
 				
-				listener = new LocationListener() {
+				GPSListener = new LocationListener() {
+			        public void onLocationChanged(Location location) {
+		        		//SendDataToServer(location);
+			        }
+			        public void onProviderDisabled(String provider) {}
+			        public void onProviderEnabled(String provider) {}
+			        public void onStatusChanged(String provider, int status, Bundle extras) {}
+			    };
+			    
+			    NetworkListener = new LocationListener() {
 			        public void onLocationChanged(Location location) {
 		        		//SendDataToServer(location);
 			        }
@@ -57,7 +67,8 @@ public class GPSTracking extends CordovaPlugin {
 		        if(!gps_enabled && !network_enabled)
 		        	callbackContext.error("There's no active location provider on your device.");
 		        
-		        lm.requestLocationUpdates(Interval, 0, criteria, listener, this);
+		        lm.requestLocationUpdates(LocationManager.GPS_PROVIDER, Interval, 0, GPSListener);
+		        lm.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, Interval, 0, NetworkListener);
 //		        
 //				this.cordova.getThreadPool().execute(new Runnable() {
 //				    public void run() {
